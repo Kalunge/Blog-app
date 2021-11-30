@@ -1,24 +1,78 @@
-# README
+# Blog.io
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> A blog website to track posts and users built using the Ruby on Rails framework.
+> 
+![Screenshot from 2021-11-30 11-09-12](https://user-images.githubusercontent.com/50773868/144027638-e71c355d-ab9f-4931-b5a4-7e6758a5cb3d.png)
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby on Rails
+- PostgreSQL
 
-* System dependencies
+## Getting Started
 
-* Configuration
+To get a local copy up and running follow these simple example steps.
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+### Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+- Make sure you have Ruby on Rails set up properly on your computer
+- Clone or download this repo on your machine
+  
+  ```git clone git@github.com:Kalunge/Blog-app.git```
+- cd into project directory
+  
+  ``` cd Blog-app```
 
-* Deployment instructions
+### Development Database
 
-* ...
+```sh
+# Create user
+sudo -u postgres createuser blog -s
+# Create the database
+rake db:create
+```
+
+### Install
+
+```sh
+bundle install
+```
+
+### Run
+
+```sh
+rails s
+```
+
+### Test
+
+```sh
+rspec
+```
+
+## Author
+
+👤 **Titus Muthomi**
+
+- GitHub: [@Kalunge](https://github.com/Kalunge)
+- Twitter: [@titus_muthomi](https://twitter.com/titus_muthomi)
+- LinkedIn: [Titus Muthomi](https://www.linkedin.com/in/muthomi-titus-295024181/)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Kalunge/Blog-app/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## License
+
+[MIT](./LICENSE)
