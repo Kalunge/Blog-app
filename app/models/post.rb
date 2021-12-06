@@ -8,6 +8,6 @@ class Post < ApplicationRecord
   end
 
   def self.five_recent_posts(post_id)
-    Comment.find_by(post_id: post_id).order(created_at: :desc).limit(5)
+    Comment.find_by(post_id: post_id).last(5)
   end
 end
