@@ -12,4 +12,94 @@
  *
  *= require_tree .
  *= require_self
+  *=require font_awesome5_webfont
  */
+
+.user {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user-details {
+  border: solid 3px black;
+  padding: 1% 20% 1% 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.user img {
+  padding: 1% 5%;
+  border: solid 1px black;
+  margin-bottom: 2%;
+}
+
+.user-details p {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 65%;
+  white-space: nowrap;
+}
+
+.user-details h2 {
+  white-space: nowrap;
+  margin-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.bio {
+  border: solid 3px black;
+  margin-left: 11%;
+  margin-right: 5%;
+  padding: 2% 1%;
+}
+
+.post {
+  border: solid 3px black;
+  margin-left: 11%;
+  margin-right: 5%;
+  padding: 2% 1%;
+  margin-top: 2%;
+
+  /* margin-bottom: 2%; */
+}
+
+.button {
+  text-align: center;
+}
+
+.button button {
+  border: solid 2px black;
+  padding: 1%;
+  border-radius: 7%;
+  cursor: pointer;
+}
+
+.comments {
+  border: black 3px solid;
+  margin-left: 11%;
+  margin-right: 5%;
+  padding: 2% 1%;
+}
+
+.commlikes {
+  margin-left: 80%;
+}
+
+.container {
+  margin-bottom: 5%;
+}
+
+.post-detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  margin-top: 3%;
+}

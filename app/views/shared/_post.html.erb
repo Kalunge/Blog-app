@@ -1,0 +1,12 @@
+  <% @posts.each_with_index do | post, index | %>
+  <div class="post">
+    <%= link_to user_post_path(post.user.id, post.id) do %>
+    <h2> <%= post.Title %></span>
+      <% end %>
+    </h2>
+    <p> <%= post.Text %></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quidem omnis fuga commodi dolorem voluptatem
+      minima eos eum quasi nemo aspernatur nulla, ipsum, adipisci temporibus!</p>
+    <h6 class="commlikes">comments : <%= post.comments.count %> likes : <%= post.likes.count %></h6>
+  </div>
+  <% end %>
