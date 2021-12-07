@@ -1,8 +1,9 @@
 # Blog.io
 
-> A blog website to track posts and users built using the Ruby on Rails framework.
+> A blog website to track posts and users built using the Ruby on Rails framewor![Screenshot from 2021-12-07 19-40-53](https://user-images.githubusercontent.com/50773868/145087762-1d9c3d22-6131-4eca-b909-ae89c74c7f8c.png)
 > 
-![Screenshot from 2021-11-30 11-09-12](https://user-images.githubusercontent.com/50773868/144027638-e71c355d-ab9f-4931-b5a4-7e6758a5cb3d.png)
+
+![Screenshot from 2021-12-07 19-40-41](https://user-images.githubusercontent.com/50773868/145087818-044e8976-b4f2-47df-84dc-c9d2556a980e.png)
 
 ## Built With
 
