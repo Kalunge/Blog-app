@@ -26,8 +26,10 @@
     impedit aliquam perspiciatis nulla tempore, vero dolor atque fuga non. Sunt ex cum eos magni architecto illo
     dignissimos vel voluptates nobis.</p>
 </section>
-<div class="comments">
-  <% @post.comments.each do |comment | %>
-  <p> <%= comment.user.Name %> : <%= comment.text %></>
-    <% end %>
-</div>
+<% if @post.comments.size > 0 %>
+  <div class="comments">
+    <% @post.comments.each do |comment | %>
+    <p> <%= comment.user.Name %> : <%= comment.text %></>
+      <% end %>
+  </div>
+<% end %>

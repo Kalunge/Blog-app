@@ -10,10 +10,12 @@
       minima eos eum quasi nemo aspernatur nulla, ipsum, adipisci temporibus!</p>
     <h6 class="commlikes">comments : <%= post.comments.count %> likes : <%= post.likes.count %></h6>
   </div>
-  <div class="comments">
-    <% post.comments.each do |comment | %>
-    <p> <%= comment.user.Name %> : <%= comment.text %></>
-      <% end %>
-  </div>
+  <% if post.comments.size > 0 %>
+    <div class="comments">
+      <% post.comments.each do |comment | %>
+      <p> <%= comment.user.Name %> : <%= comment.text %></>
+        <% end %>
+    </div>
+  <% end %>
 </div>
 <% end %>

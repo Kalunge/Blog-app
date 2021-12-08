@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find_by(id: params['user_id'])
-    @posts = @user.posts
+    @posts = @user.posts.order(created_at: :desc)
   end
 
   def create
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
       format.html do
         if @post.save
           # flash[:success] = "Post created successfully"
-          redirect_to user_posts_path(@post.user.id, @post.id), notice: "Post created succeffuly"
+          redirect_to user_posts_path(@user.id, @post.id), notice: "Post created succeffuly"
         else
           flash[:error] = "Post not created try again"
           render new
