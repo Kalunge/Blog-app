@@ -8,5 +8,8 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quidem omnis fuga commodi dolorem voluptatem
       minima eos eum quasi nemo aspernatur nulla, ipsum, adipisci temporibus!</p>
     <h6 class="commlikes">comments : <%= post.comments.count %> likes : <%= post.likes.count %></h6>
+    <%= link_to user_post_path(post.user.id, post.id) do %>
+    <button class="text-center btn btn-dark comment-btn">comment on this post</button>
+    <% end %>
   </div>
   <% end %>

@@ -1,3 +1,6 @@
+<%= link_to user_path(@user.id) do %>
+<button class="btn btn-dark mt-5 mx-5 px-5"> Back</button>
+<% end %>
 <section class="comments wrapper">
   <div class="post-detail">
     <h3><%= @post.Title %> by <%= @post.user.Name %></h3>
@@ -26,10 +29,12 @@
     impedit aliquam perspiciatis nulla tempore, vero dolor atque fuga non. Sunt ex cum eos magni architecto illo
     dignissimos vel voluptates nobis.</p>
 </section>
+
 <% if @post.comments.size > 0 %>
-  <div class="comments">
-    <% @post.comments.each do |comment | %>
-    <p> <%= comment.user.Name %> : <%= comment.text %></>
-      <% end %>
-  </div>
+<div class="comments">
+  <% @post.comments.each do |comment | %>
+  <p> <%= comment.user.Name %> : <%= comment.text %></>
+    <% end %>
+</div>
 <% end %>
+<%= render partial: "shared/comment" %>
