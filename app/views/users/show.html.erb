@@ -1,1 +1,22 @@
-<h1>Get a user by Id</h1>
+<section>
+  <%= render partial: "shared/user", object: @user %>
+  <div class="bio">
+    <h2>Bio</h2>
+    <p><%= @user.Bio %></p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corrupti facere ex repellat exercitationem.
+      Eveniet minima non adipisci ipsa dolore nihil magnam laborum nam sequi necessitatibus pariatur aut vel consequatur
+      obcaecati repudiandae fugiat, dolores molestiae quos. Sunt iste repellendus, dignissimos pariatur ipsum reiciendis
+      velit impedit iure perferendis tempora cumque similique amet quaerat labore vel fugiat. Labore facere eaque vero
+      temporibus similique eveniet quisquam ad doloremque esse, repudiandae quia dolor optio ullam. Ducimus aliquid in
+      sed ut, nulla nam perferendis ipsam expedita vel suscipit, explicabo exercitationem placeat aliquam, dolore rem
+      facere eveniet? Soluta reprehenderit eveniet autem earum qui magni molestias quisquam possimus praesentium eaque
+      alias reiciendis cupiditate eos, optio libero, totam dolore ducimus vel neque maiores numquam tempora quod aliquid
+      perspiciatis! Nostrum porro quae, nam corporis reprehenderit maiores quam repellendus, ex mollitia accusamus quo?
+      Reiciendis saepe blanditiis quis? Aperiam reprehenderit qui dolores eligendi. Quod a ab accusantium iste. Veniam,
+      molestiae eius?</p>
+  </div>
+  <%= render partial: "shared/post", object: @post %>
+  <div class="button">
+    <button>See all Posts</button>
+  </div>
+</section>
