@@ -1,9 +1,12 @@
 # Blog.io
+site to track posts and users built using the Ruby on Rails framework
 
-> A blog website to track posts and users built using the Ruby on Rails framewor![Screenshot from 2021-12-07 19-40-53](https://user-images.githubusercontent.com/50773868/145087762-1d9c3d22-6131-4eca-b909-ae89c74c7f8c.png)
-> 
+> A blog web![Screenshot from 2021-12-08 19-03-27](https://user-images.githubusercontent.com/50773868/145261309-cf2fa744-ddfb-4c37-bf6b-5a5ebf6ea28d.png)
 
-![Screenshot from 2021-12-07 19-40-41](https://user-images.githubusercontent.com/50773868/145087818-044e8976-b4f2-47df-84dc-c9d2556a980e.png)
+> ![Screenshot from 2021-12-08 19-15-56](https://user-images.githubusercontent.com/50773868/145261871-029e8270-8a4b-4615-b66d-912c90433104.png)
+
+
+
 
 ## Built With
 
@@ -22,7 +25,8 @@ To get a local copy up and running follow these simple example steps.
 - Clone or download this repo on your machine
   
   ```git clone git@github.com:Kalunge/Blog-app.git```
-- cd into project directory
+- cd into project directory![145261309-cf2fa744-ddfb-4c37-bf6b-5a5ebf6ea28d](https://user-images.githubusercontent.com/50773868/145261402-cc401dbf-f42f-4b09-b291-5605678952ee.png)
+
   
   ``` cd Blog-app```
 
