@@ -8,11 +8,10 @@ class CommentsController < ApplicationController
       format.html do
         if @comment.save
           flash[:success] = 'Comment created succeffuly'
-          redirect_to user_post_path(@post.user.id, @post.id)
         else
           flash[:error] = 'Comment not created try again'
-          redirect_to user_post_path(@post.user.id, @post.id)
         end
+        redirect_to user_post_path(@post.user.id, @post.id)
       end
     end
   end
