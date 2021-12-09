@@ -31,8 +31,8 @@ To get a local copy up and running follow these simple example steps.
 ```sh
 # Create user
 sudo -u postgres createuser blog -s
-# Create the database
-rake db:create
+# To recreate database for view testing
+rake db:reset
 ```
 
 ### Install
