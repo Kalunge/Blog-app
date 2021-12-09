@@ -1,0 +1,8 @@
+<div class="text-center mt-5">
+  <%= form_with  url: post_comments_path(@post.id), scope: :@comment do | f| %>
+  <div class="form-control">
+    <%= f.text_area :text, placeholder: 'Leave a comment', required:true %><br>
+  </div>
+  <%= f.submit "Add Comment" %>
+  <% end %>
+</div>

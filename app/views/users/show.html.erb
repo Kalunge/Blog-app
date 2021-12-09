@@ -1,3 +1,6 @@
+<%= link_to root_path do %>
+<button class="btn btn-dark mt-5 mx-5 px-5"> Back</button>
+<% end %>
 <section>
   <%= render partial: "shared/user", object: @user %>
   <div class="bio">
@@ -15,8 +18,11 @@
       Reiciendis saepe blanditiis quis? Aperiam reprehenderit qui dolores eligendi. Quod a ab accusantium iste. Veniam,
       molestiae eius?</p>
   </div>
+   
+  <%= render partial: "shared/create" %>
   <%= render partial: "shared/post", object: @post %>
-  <div class="button">
+  <div class="button ">
     <button>See all Posts</button>
   </div>
+
 </section>

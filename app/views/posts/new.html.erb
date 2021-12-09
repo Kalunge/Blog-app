@@ -1,0 +1,14 @@
+<div class="text-center mt-5">
+  <%= form_with model: @post, url: posts_path, method: :post, local: true, scope: :post do | f| %>
+  <div class="form-control">
+    <%= f.label :Title %><br>
+    <%= f.text_field :Title %>
+  </div>
+
+  <div class="form-control mb-3">
+    <%= f.label :Text %><br>
+    <%= f.text_field :Text %>
+  </div>
+    <%= f.submit "Add Post" %>
+  <% end %>
+</div>
