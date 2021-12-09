@@ -11,7 +11,8 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if @post.save
-          redirect_to user_posts_path(@user.id, @post.id), notice: 'Post created succeffuly'
+          flash[:success] = 'Post created succeffuly'
+          redirect_to user_posts_path(@user.id, @post.id) 
         else
           flash[:error] = 'Post not created try again'
           render new

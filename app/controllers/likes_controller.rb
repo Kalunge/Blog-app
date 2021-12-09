@@ -7,9 +7,9 @@ class LikesController < ApplicationController
     respond_to do |format|
       format.html do
         if @like.save
-          flash[:success] = 'Post created successfully'
+          flash[:success] = 'Post liked successfully'
         else
-          flash[:error] = 'post not liked'
+          flash[:error] = 'post not liked successfully'
         end
         redirect_to user_post_path(@post.user.id, @post.id)
       end

@@ -54,7 +54,7 @@ rails s
 ### Test
 
 ```sh
-rspec
+rspec/spec
 ```
 
 ## Author

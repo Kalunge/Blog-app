@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-
   it 'is associated with a post' do
     post = Post.create(Title: 'Anew post', Text: 'Welcome to my blog')
     like = Like.create(post: post)
