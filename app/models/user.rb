@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :Name, presence: { message: 'You must fill in your name' }
+  validates_numericality_of :PostsCounter, only_integer: true, greater_than_or_equal: 
+
   has_many :posts
   has_many :likes
   has_many :comments
