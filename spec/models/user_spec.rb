@@ -10,8 +10,8 @@ RSpec.describe User, type: :model do
     expect(@user).to_not be_valid
   end
 
-   it 'User name presence validation' do
-    @user.PostsCounter= @user.posts.count
+  it 'User name presence validation' do
+    @user.PostsCounter = @user.posts.count
     expect(@user).to be_valid
   end
 
