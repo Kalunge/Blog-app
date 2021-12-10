@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   validates_numericality_of :LikesCounter, only_integer: true, greater_than_or_equal: 0
 
   def self.update_post_counter(user_id)
-    Post.find_by(id: user_id).update(posts_counter: Post.where(user_id: user_id).count)
+    Post.find_by(id: user_id).update(PostsCounter: Post.where(user_id: user_id).count)
   end
 
   def self.five_recent_posts(post_id)

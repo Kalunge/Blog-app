@@ -7,8 +7,8 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     @post = @user.posts.create(post_params)
-    @post.CommentsCounter = @post.comments.count
-    @post.LikesCounter = @post.likes.count
+    @post.CommentsCounter = 0
+    @post.LikesCounter = 0
 
     respond_to do |format|
       format.html do
