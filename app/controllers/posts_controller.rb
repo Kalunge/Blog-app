@@ -1,20 +1,23 @@
 class PostsController < ApplicationController
   def index
     @user = User.find_by(id: params['user_id'])
-    @posts = @user.posts.order(created_at: :desc)
+    @posts = @user.posts.includes(:comments).order(created_at: :desc)
   end
 
   def create
     @user = current_user
     @post = @user.posts.create(post_params)
+    @post.CommentsCounter = 0
+    @post.LikesCounter = 0
 
     respond_to do |format|
       format.html do
         if @post.save
-          redirect_to user_posts_path(@user.id, @post.id), notice: 'Post created succeffuly'
+          flash[:success] = 'Post created succeffuly'
+          redirect_to user_posts_path(@user.id, @post.id)
         else
           flash[:error] = 'Post not created try again'
-          render new
+          render :new
         end
       end
     end

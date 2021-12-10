@@ -1,7 +1,8 @@
 # Blog.io
 site to track posts and users built using the Ruby on Rails framework
 
-> A blog web![Screenshot from 2021-12-08 19-03-27](https://user-images.githubusercontent.com/50773868/145261309-cf2fa744-ddfb-4c37-bf6b-5a5ebf6ea28d.png)
+> ![Screenshot from 2021-12-09 12-53-21](https://user-images.githubusercontent.com/50773868/145392344-3ffe937d-0b08-43a7-a375-055495c95aad.png)
+
 
 > ![Screenshot from 2021-12-08 19-15-56](https://user-images.githubusercontent.com/50773868/145261871-029e8270-8a4b-4615-b66d-912c90433104.png)
 
@@ -25,9 +26,8 @@ To get a local copy up and running follow these simple example steps.
 - Clone or download this repo on your machine
   
   ```git clone git@github.com:Kalunge/Blog-app.git```
-- cd into project directory![145261309-cf2fa744-ddfb-4c37-bf6b-5a5ebf6ea28d](https://user-images.githubusercontent.com/50773868/145261402-cc401dbf-f42f-4b09-b291-5605678952ee.png)
-
-  
+- cd into project directory
+ 
   ``` cd Blog-app```
 
 ### Development Database
@@ -54,7 +54,7 @@ rails s
 ### Test
 
 ```sh
-rspec
+rspec/spec
 ```
 
 ## Author
