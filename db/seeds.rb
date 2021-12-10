@@ -18,6 +18,8 @@
       Text: "I live in house number #{i * 2}",
       user: new_user
     )
+    # new_post.CommentsCounter = new_post.comments.count
+    # new_post.LikesCounter = new_post.likes.count
 
     3.times do | comm |
       Comment.create(
