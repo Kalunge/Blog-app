@@ -1,3 +1,6 @@
+ <% if user_signed_in? %>
+ <%= link_to t('sign_out'), destroy_user_session_path, method: :delete, class: "btn btn-sm btn-danger" %>
+ <% end %>
 <div class="mt-5">
   <div class="user">
     <img src=<%= user.photo %> alt="profile picture">
@@ -7,3 +10,4 @@
     </div>
   </div>
 </div>
+
