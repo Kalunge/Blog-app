@@ -68,3 +68,5 @@ gem 'rails-controller-testing'
 gem 'bootstrap', '~> 5.1.3'
 
 gem 'devise'
+
+gem 'cancancan'
