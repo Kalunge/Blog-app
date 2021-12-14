@@ -1,4 +1,13 @@
+ <nav class="nav justify-content-center d-flex mt-3 ">
  <%= render partial: "shared/create" %>
+
+ <% if user_signed_in? %>
+ <%= link_to t('sign_out'), destroy_user_session_path, method: :delete, class: "btn btn-sm btn-danger" %>
+ <% end %>
+
+ <%= link_to "Edit", edit_user_registration_path, class: "btn btn-sm btn-success" %>
+ </nav>
+
  <% @users.each do |user| %>
  <%= link_to user_path(user.id) do %>
  <%= render partial: "shared/user", object: user %>
