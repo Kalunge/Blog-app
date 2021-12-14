@@ -1,9 +1,6 @@
- <% if user_signed_in? %>
- <%= link_to t('sign_out'), destroy_user_session_path, method: :delete, class: "btn btn-sm btn-danger" %>
- <% end %>
-<div class="mt-5">
+ <div class="mt-5">
   <div class="user">
-    <img src=<%= user.photo %> alt="profile picture">
+    <img src=<%= user_img(user) %> alt="profile picture">
     <div class="user-details">
       <h2> <%= user.Name %></h2>
       <p>Number of posts: <%= user.posts.count %></p>
