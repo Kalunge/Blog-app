@@ -1,5 +1,5 @@
 require 'rails_helper'
-# rubocop:disable Metrics/BlockLength
+# rubocop:disable Metrics/BlockLength, Layout/LineLength
 RSpec.feature 'Logins', type: :feature do
   background { visit new_user_session_path }
 
@@ -37,7 +37,7 @@ RSpec.feature 'Logins', type: :feature do
     expect(page).to have_content 'Julie'
   end
 
-  scenario "I can see the number of posts the user has written." do
+  scenario 'I can see the number of posts the user has written.' do
     @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
                          photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
     @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
@@ -136,5 +136,5 @@ RSpec.feature 'Logins', type: :feature do
     find("a[href='#{user_posts_path(@user2.id)}']").click
     expect(page.has_button?('Pagination')).to be true
   end
-  # rubocop:enable Metrics/BlockLength
+  # rubocop:enable Metrics/BlockLength, Layout/LineLength
 end

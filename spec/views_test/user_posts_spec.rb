@@ -1,5 +1,5 @@
 require 'rails_helper'
-# rubocop:disable Metrics/BlockLength
+# rubocop:disable Metrics/BlockLength, Layout/LineLength
 RSpec.feature 'User Index', type: :feature do
   background { visit new_user_session_path }
   scenario "I can see the user's profile picture." do
@@ -90,8 +90,8 @@ RSpec.feature 'User Index', type: :feature do
   end
 
   scenario 'can see the first comments on a post.' do
-   @user = User.create(Name: 'Julie', email: 'jeri@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
+    @user = User.create(Name: 'Julie', email: 'jeri@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                        photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
 
     @post = @user.posts.create(Title: 'hello there', Text: 'Etiam et mauris et', CommentsCounter: 0, LikesCounter: 0)
     @comment = @post.comments.create(text: 'consectetur adipiscing e mollislibero non urna', user_id: @user.id)
@@ -126,8 +126,8 @@ RSpec.feature 'User Index', type: :feature do
   end
 
   scenario ' can see how many likes a post has.' do
-   @user = User.create(Name: 'Julie', email: 'manu@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
+    @user = User.create(Name: 'Julie', email: 'manu@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                        photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
 
     @post = @user.posts.create!(Title: 'hello there', Text: 'Etiam et mauris et', CommentsCounter: 0, LikesCounter: 0)
     Like.create!(user_id: @user.id, post_id: @post.id)
@@ -139,7 +139,7 @@ RSpec.feature 'User Index', type: :feature do
     click_button 'Log in'
     find("a[href='#{user_path(@user.id)}']").click
     find("a[href='#{user_posts_path(@user.id)}']").click
-    expect(page).to have_content "likes : #{1}"
+    expect(page).to have_content 'likes : 1'
   end
 
   scenario 'I can see a section for pagination if there are more posts than fit on the view.' do
@@ -167,10 +167,10 @@ RSpec.feature 'User Index', type: :feature do
   end
 
   scenario "When I click on a post, it redirects me to that post's show page." do
-   @user = User.create!(Name: 'Julie', email: 'eric@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+    @user = User.create!(Name: 'Julie', email: 'eric@gmail.com', password: 'qwerty', confirmed_at: Time.now,
                          photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
-  @user2 = User.create!(Name: 'Julie', email: 'mine@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
+    @user2 = User.create!(Name: 'Julie', email: 'mine@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                          photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
 
     @post = @user.posts.create!(Title: 'hello there', Text: 'Etiam et mauris et', CommentsCounter: 0, LikesCounter: 0)
     @coment = @post.comments.create(text: ' consectetur adipiscing e mollislibero non urna', user_id: @user.id)
@@ -184,5 +184,5 @@ RSpec.feature 'User Index', type: :feature do
     find("a[href='#{user_posts_path(@user.id, @post.id)}']").click
     expect(page).to have_content @post.Text
   end
-  # rubocop:enable Metrics/BlockLength
+  # rubocop:enable Metrics/BlockLength, Layout/LineLength
 end
