@@ -1,3 +1,3 @@
 <%= form_with url: post_likes_path(@post.id) do |f| %>
-  <%= f.submit "Like", class: "btn btn-sm btn-primary" %>
+  <%= f.submit "Like", data: {disable_with: "Adding..."}, class: "btn btn-primary mb-3"%>
 <% end %>

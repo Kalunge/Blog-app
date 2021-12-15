@@ -3,7 +3,7 @@
 <% end %>
 <section>
   <%= render partial: "shared/user", object: @user %>
-  <div class="bio">
+  <div class="bio mb-3">
     <h2>Bio</h2>
     <p><%= @user.Bio %></p>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti corrupti facere ex repellat exercitationem.
@@ -21,8 +21,10 @@
    
   <%= render partial: "shared/create" %>
   <%= render partial: "shared/post", object: @post %>
-  <div class="button ">
-    <button>See all Posts</button>
+  <div class="button">
+    <button class= "btn btn-danger my-5">
+    <%= link_to "See all Posts" , user_posts_path(@user.id) %>
+    </button>
   </div>
 
 </section>

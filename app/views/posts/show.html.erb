@@ -7,35 +7,12 @@
     <h6>comments : <%= @post.comments.count %> likes : <%= @post.likes.count %></h6>
   </div>
   <p> <%= @post.Text %></p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis odit totam quia consectetur cupiditate
-    pariatur facilis accusantium vero eum, mollitia officiis dolor laudantium, nobis illum aperiam fuga doloribus
-    aspernatur corporis veniam error esse reprehenderit accusamus. Officia exercitationem reprehenderit, culpa nostrum
-    officiis modi quasi provident ad nobis, nemo facilis excepturi quos quis aliquid enim tempora repellat accusantium
-    quam ipsam nisi! Similique, eveniet provident accusantium voluptate mollitia totam fuga officia, est aliquid
-    dignissimos impedit explicabo praesentium autem necessitatibus ea voluptatum laborum a iste odit! Officiis, commodi
-    aperiam! Maxime eos beatae voluptate sit soluta quis dolores accusantium, reprehenderit, nostrum assumenda fuga,
-    laborum perspiciatis qui. Laudantium itaque adipisci sunt tempora repellat nobis explicabo impedit a qui suscipit!
-    Non quisquam, dolorum, fuga repellat laboriosam accusamus impedit ea ipsum doloribus at blanditiis. Eius unde facere
-    iste, reiciendis aut nemo officiis aperiam voluptatem inventore a reprehenderit possimus ex earum cumque eum dolores
-    deserunt pariatur error quod repellendus. Provident aut praesentium expedita magnam ratione vero consequatur
-    accusantium molestiae eligendi aspernatur, voluptates pariatur, suscipit dolorum earum voluptatem omnis ipsam,
-    maiores obcaecati deleniti tenetur iste culpa nemo. Porro molestiae officia aliquam natus beatae ut aut officiis
-    error quam! Perspiciatis in dolore, vitae quas consequuntur possimus laborum, perferendis beatae at fuga vel,
-    inventore nemo ad. Numquam facere quibusdam unde, vel possimus tempore debitis odio fugit perspiciatis laudantium
-    ipsum deserunt ad. Consectetur sit molestias ratione similique voluptates temporibus sed optio vel ea dolor delectus
-    iure eaque id porro in natus, reiciendis accusamus praesentium maxime! Aliquam at repudiandae cum sint nisi sunt
-    mollitia debitis velit, officia nesciunt veniam maxime accusantium enim repellendus iusto nam magnam commodi
-    accusamus nobis fuga error rem aspernatur! Nisi doloribus nihil, libero nemo ipsa eaque praesentium culpa recusandae
-    impedit aliquam perspiciatis nulla tempore, vero dolor atque fuga non. Sunt ex cum eos magni architecto illo
-    dignissimos vel voluptates nobis.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis odit totam quia consectetur cupiditate</p>
+
+    <% if can? :destroy, @post %>
+    <%= link_to "Delete", user_post_path(@user.id, @post.id), method: :delete, data: {disable_with: "Deleting..."}, class: "btn btn-danger mb-3"%>
+    <% end %>
      <%= render partial: "shared/like"%>
 </section>
-
-<% if @post.comments.size > 0 %>
-<div class="comments">
-  <% @post.comments.each do |comment | %>
-  <p> <%= comment.user.Name %> : <%= comment.text %></>
-    <% end %>
-</div>
-<% end %>
 <%= render partial: "shared/comment" %>
+  <%= render "layouts/commentdestroy" %>
