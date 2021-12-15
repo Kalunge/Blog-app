@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.feature 'Logins', type: :feature do
   background { visit new_user_session_path }
 
-  scenario "When click on user Should redirected to that user's show page" do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image')
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image')
+  scenario "I can see the user's profile picture." do
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
 
-    Post.create(title: 'Lorem ipsum dolor sit amet', text: 'Etiam et mauris et ligula', author_id: @user2.id)
+    Post.create(Title: 'Lorem ipsum dolor sit amet', Text: 'Etiam et mauris et ligula', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
@@ -17,17 +17,17 @@ RSpec.feature 'Logins', type: :feature do
     click_button 'Log in'
     find("a[href='#{user_path(@user2.id)}']").click
     expect(find('img') do |img|
-             img[:src] == 'http/url/image'
+             img[:src] == 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg'
            end).to be_truthy
   end
 
-  scenario "When click on user Should redirected to that user's show page" do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image')
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image')
+  scenario "I can see the user's username." do
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
 
-    Post.create(title: 'Lorem ipsum dolor sit amet', text: 'Etiam et mauris et ligula', author_id: @user2.id)
+    Post.create(Title: 'Lorem ipsum dolor sit amet', Text: 'Etiam et mauris et ligula', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
@@ -37,48 +37,48 @@ RSpec.feature 'Logins', type: :feature do
     expect(page).to have_content 'Julie'
   end
 
-  scenario "When click on user Should redirected to that user's show page" do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image')
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image')
+  scenario "I can see the number of posts the user has written." do
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
 
-    Post.create(title: 'Lorem ipsum dolor sit amet', text: 'Etiam et mauris et ligula', author_id: @user2.id)
+    Post.create(Title: 'Lorem ipsum dolor sit amet', Text: 'Etiam et mauris et ligula', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
     end
     click_button 'Log in'
     find("a[href='#{user_path(@user2.id)}']").click
-    expect(page).to have_content 'Number of posts: 1'
+    expect(page).to have_content "Number of posts: #{@user2.posts.size}"
   end
 
-  scenario "can see the user's bio." do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: "I'm a good person")
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: 'Software engineer')
+  scenario "can see the user's Bio." do
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: "I'm a good person")
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
 
-    Post.create(title: 'Lorem ipsum dolor sit amet', text: 'Etiam et mauris et ligula', author_id: @user2.id)
+    Post.create(Title: 'Lorem ipsum dolor sit amet', Text: 'Etiam et mauris et ligula', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
     end
     click_button 'Log in'
     find("a[href='#{user_path(@user2.id)}']").click
-    expect(page).to have_content @user2.bio
+    expect(page).to have_content @user2.Bio
   end
 
-  scenario "can see the user's first 3 posts." do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: "I'm a good person")
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: 'Software engineer')
+  scenario "can see the user's recent 3 posts." do
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: "I'm a good person")
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
 
-    Post.create(title: 'hello there', text: 'Etiam et mauris et', author_id: @user2.id)
-    Post.create(title: 'ipsum dolor sit amet', text: 'et mauris et ligula', author_id: @user2.id)
-    Post.create(title: 'sum dolor sit amet', text: 'Etiam et et ligula', author_id: @user2.id)
-    Post.create(title: 'anything', text: 'iam et et ligula', author_id: @user2.id)
+    Post.create(Title: 'hello there', Text: 'Etiam et mauris et', user_id: @user2.id)
+    Post.create(Title: 'ipsum dolor sit amet', Text: 'et mauris et ligula', user_id: @user2.id)
+    Post.create(Title: 'sum dolor sit amet', Text: 'Etiam et et ligula', user_id: @user2.id)
+    Post.create(Title: 'anything', Text: 'iam et et ligula', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
@@ -89,44 +89,44 @@ RSpec.feature 'Logins', type: :feature do
   end
 
   scenario "can see a button that lets me view all of a user's posts." do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: "I'm a good person")
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: 'Software engineer')
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: "I'm a good person")
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
 
-    Post.create(title: 'Lorem ipsum dolor', text: 'Etiam et mauris et', author_id: @user2.id)
+    Post.create(Title: 'Lorem ipsum dolor', Text: 'Etiam et mauris et', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
     end
     click_button 'Log in'
     find("a[href='#{user_path(@user2.id)}']").click
-    expect(page.has_link?('See all posts')).to be true
+    expect(page.has_link?('See all Posts')).to be true
   end
 
-  scenario "can see a button that lets me view all of a user's posts." do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: "I'm a good person")
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: 'Software engineer')
+  scenario "When I click a user's post, it redirects me to that post's show page.." do
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: "I'm a good person")
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
 
-    @post = Post.create(title: 'Lorem ipsum dolor', text: 'Etiam et mauris et', author_id: @user2.id)
+    @post = Post.create(Title: 'Lorem ipsum dolor', Text: 'Etiam et mauris et', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
     end
     click_button 'Log in'
     find("a[href='#{user_path(@user2.id)}']").click
-    find("a[href='#{user_post_path(@user2.id, @post.id)}']").click
-    expect(page.has_button?('Add Comment')).to be true
+    find("a[href='#{user_posts_path(@user2.id, @post.id)}']").click
+    expect(page).to_not have_content 'Etiam et mauris et'
   end
 
-  scenario "can see a button that lets me view all of a user's posts." do
-    @user1 = User.create(name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: "I'm a good person")
-    @user2 = User.create(name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
-                         photo: 'http/url/image', bio: 'Software engineer')
-    @post = Post.create(title: 'Lorem ipsum dolor', text: 'Etiam et mauris et', author_id: @user2.id)
+  scenario "When I click to see all posts, it redirects me to the user's post's index page." do
+    @user1 = User.create(Name: 'Titus', email: 'titus@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: "I'm a good person")
+    @user2 = User.create(Name: 'Julie', email: 'julie@gmail.com', password: 'qwerty', confirmed_at: Time.now,
+                         photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg', Bio: 'Software engineer')
+    @post = Post.create(Title: 'Lorem ipsum dolor', Text: 'Etiam et mauris et', user_id: @user2.id)
     within 'form' do
       fill_in 'Email', with: @user1.email
       fill_in 'Password', with: @user1.password
