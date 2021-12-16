@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = User.new(Name: 'John Doe', Bio: 'Test Bio', email: "Doe@gmail.com", password: "qwerty", photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
+    @user = User.new(Name: 'John Doe', Bio: 'Test Bio', email: 'Doe@gmail.com', password: 'qwerty', photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
   end
 
   it 'is not valid if name absent' do
