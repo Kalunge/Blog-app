@@ -7,8 +7,6 @@
     <h6>comments : <%= @post.comments.count %> likes : <%= @post.likes.count %></h6>
   </div>
   <p> <%= @post.Text %></p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis odit totam quia consectetur cupiditate</p>
-
     <% if can? :destroy, @post %>
     <%= link_to "Delete", user_post_path(@user.id, @post.id), method: :delete, data: {disable_with: "Deleting..."}, class: "btn btn-danger mb-3"%>
     <% end %>

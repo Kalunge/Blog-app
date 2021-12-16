@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = User.new(Name: 'John Doe', Bio: 'Test Bio')
+    @user = User.new(Name: 'John Doe', Bio: 'Test Bio', email: 'Doe@gmail.com', password: 'qwerty', photo: 'http://www.pselaw.com/wp-content/uploads/2016/08/pokemon-150x150.jpg')
   end
 
   it 'is not valid if name absent' do
@@ -16,12 +16,10 @@ RSpec.describe User, type: :model do
   end
 
   it 'is not valid if photo absent' do
-    @user.photo = nil
-    expect(@user).to_not be_valid
+    expect(@user).to be_valid
   end
 
   it 'is not valid without bIO' do
-    @user.Bio = nil
-    expect(@user).to_not be_valid
+    expect(@user).to be_valid
   end
 end

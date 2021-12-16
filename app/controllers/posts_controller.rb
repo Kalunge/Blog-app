@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     @post.comments.destroy_all
     @post.likes.destroy_all
     @post.destroy
-    redirect_to user_posts_path(@user.id), notice: 'Post deleted'
+    redirect_to user_path(@user.id), notice: 'Post deleted'
   end
 
   private
